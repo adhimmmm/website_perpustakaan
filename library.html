@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital | Katalog Buku</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <span class="text-xl font-bold text-gray-800">Perpustakaan Digital</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-700 hover:text-blue-600 transition">Beranda</a>
+                    <a href="#kategori" class="text-gray-700 hover:text-blue-600 transition">Katalog</a>
+                    <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition">Tentang Kami</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="#beranda" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Beranda</a>
+                <a href="#kategori" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Katalog</a>
+                <a href="/about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tentang Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="beranda" class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                Selamat Datang di Perpustakaan Digital
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+                Jelajahi ribuan koleksi buku untuk menambah wawasan Anda
+            </p>
+
+            <div class="relative max-w-2xl mx-auto mb-8">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Cari judul buku atau nama penulis..."
+                    class="w-full px-6 py-4 pr-12 rounded-full border-2 border-gray-200 focus:border-blue-500 focus:outline-none text-gray-700"
+                />
+                <svg class="absolute right-5 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-3xl font-bold text-blue-600">15,000+</div>
+                    <div class="text-gray-600 mt-2">Koleksi Buku</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-3xl font-bold text-blue-600">5,000+</div>
+                    <div class="text-gray-600 mt-2">Anggota Aktif</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-3xl font-bold text-blue-600">24/7</div>
+                    <div class="text-gray-600 mt-2">Akses Online</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kategori" class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Katalog Buku</h2>
+            
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-buttons">
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-blue-600 text-white shadow-lg" data-category="Semua">Semua</button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-category="Fiction">Fiksi</button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-category="History">Sejarah</button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-category="Science">Sains</button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-category="Computers">Teknologi</button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium transition bg-gray-100 text-gray-700 hover:bg-gray-200" data-category="Art">Seni</button>
+            </div>
+
+            <div id="books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                </div>
+
+            <div id="pagination-container" class="flex justify-center items-center space-x-2 mt-10">
+                </div>
+
+            <div id="no-results" class="hidden text-center py-12">
+                <p class="text-gray-500 text-lg">Tidak ada buku yang ditemukan</p>
+            </div>
+        </div>
+    </section>
+
+     <footer class="bg-gray-800 text-white mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+        <p>&copy; 2025 Perpustakaan Digital. Ditenagai Google Books API.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script> 
+</body>
+</html>
