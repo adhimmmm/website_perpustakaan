@@ -6,19 +6,7 @@
     <title>Perpustakaan Digital | Katalog Buku</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <style>
-        html {
-          scroll-behavior: smooth;
-        }
-        .book-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .book-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="css/library.css">
 </head>
 <body class="bg-white">
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -75,12 +63,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                 <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="text-3xl font-bold text-blue-600">15,000+</div>
+                    <div class="text-3xl font-bold text-blue-600" id="total-books-count"></div>
                     <div class="text-gray-600 mt-2">Koleksi Buku</div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="text-3xl font-bold text-blue-600">5,000+</div>
-                    <div class="text-gray-600 mt-2">Anggota Aktif</div>
+                    <div class="text-3xl font-bold text-blue-600">195</div>
+                    <div class="text-gray-600 mt-2">Negara</div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-sm">
                     <div class="text-3xl font-bold text-blue-600">24/7</div>
@@ -121,6 +109,6 @@
       </div>
     </footer>
 
-    <script src="main.js"></script> 
+    <script src="js/library.js"></script> 
 </body>
 </html>

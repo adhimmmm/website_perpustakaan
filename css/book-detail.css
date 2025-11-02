@@ -1,0 +1,23 @@
+     body {
+        background-color: #f7f9fc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    #detail-container {
+        flex-grow: 1; 
+        min-height: 70vh;
+    }
+    
+    .back-button {
+        background-color: #ef4444; 
+        color: white;
+        padding: 0.75rem;
+        border-radius: 0.375rem; 
+        font-size: 1.125rem; 
+        font-weight: 600; 
+    }
+    .back-button:hover {
+        background-color: #dc2626; 
+    }

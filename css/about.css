@@ -1,0 +1,8 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f9fc;
+}
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
