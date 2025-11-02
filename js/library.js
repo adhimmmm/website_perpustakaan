@@ -201,7 +201,10 @@ $(document).ready(function () {
   function changePage(pageIndex) {
     if (pageIndex >= 0 && pageIndex * RESULTS_PER_PAGE < totalItems) {
       renderBooks(pageIndex);
-      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll ke atas saat pindah halaman
+      const catalogSection = document.getElementById('kategori');
+      if (catalogSection) {
+        catalogSection.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }
 
@@ -228,15 +231,54 @@ $(document).ready(function () {
 
   // Search (Saat tombol Enter ditekan)
   $("#search-input").on("keypress", function (e) {
-    if (e.key === "Enter") {
-      searchQuery = $(this).val();
-      renderBooks(0); // Mulai dari halaman 0 setiap kali mencari
+  if (e.key === "Enter") {
+    e.preventDefault();
+    
+    searchQuery = $(this).val();
+    renderBooks(0); 
+    
+    // Temukan elemen katalog buku
+    const catalogSection = document.getElementById('kategori');
+    
+    if (catalogSection) {
+      catalogSection.scrollIntoView({ behavior: "smooth" });
     }
-  });
+  }
+});
 
   // Mobile Menu Toggle
-  $("#mobile-menu-btn").on("click", function () {
-    $("#mobile-menu").toggleClass("hidden");
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.querySelector('header');
+
+  //fungsi toggle menu
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  //logika menutup menu
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+  }
+
+  //logika menutup ketika link dalam menu di tekan
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  //logika menutup ketika tombol menu ditekan
+  document.addEventListener('click', (event) => {
+    //cek apakah klik berasal dari tombol yang ada dalam menu
+    const isClickInsideButton = mobileMenuBtn.contains(event.target);
+    //cek apakah click berada dalam menu sendiri
+    const isClickInsideMenu = mobileMenu.contains(event.target);
+
+    //cek kondisi jika menu terlihat atau terbuka
+    if(!mobileMenu.classList.contains('hidden') && !isClickInsideButton && !isClickInsideMenu ) {
+      closeMenu();
+    }
   });
 
   // Panggil fungsi global
