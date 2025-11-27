@@ -14,34 +14,39 @@
   </head>
   <body class="min-h-screen flex flex-col">
         <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    </svg>
-                    <span class="text-xl font-bold text-gray-800">Perpustakaan Digital</span>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-container">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center space-x-2 logo-section">
+            <svg class="h-8 w-8 text-blue-600 logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+            <span class="text-xl font-bold text-gray-800 logo-text">Perpustakaan Digital</span>
+          </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="library.html" class="text-gray-700 hover:text-blue-600 transition">Beranda</a>
-                    <a href="library.html#kategori" class="text-gray-700 hover:text-blue-600 transition">Katalog</a>
-                    <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition">Tentang Kami</a>
-                </div>
+          <div class="hidden md:flex items-center space-x-8 nav-links">
+            <a href="/index.html" class="text-gray-700 hover:text-blue-600 transition">Beranda</a>
+            <a href="index.html#kategori" class="text-gray-700 hover:text-blue-600 transition">Katalog</a>
+            <a href="#about" class="text-gray-700 hover:text-blue-600 transition">Tentang Kami</a>
+          </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
-                <a href="library.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Beranda</a>
-                <a href="library.html#kategori" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Katalog</a>
-                <a href="/about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tentang Kami</a>
-            </div>
+          <button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 bg-white">
+          <a href="/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Beranda</a>
+          <a href="index.html#kategori" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Katalog</a>
+          <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tentang Kami</a>
+        </div>
+      </div>
     </nav>
 
     <main class="flex-1">

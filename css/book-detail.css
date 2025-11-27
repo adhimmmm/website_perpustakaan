@@ -21,3 +21,84 @@
     .back-button:hover {
         background-color: #dc2626; 
     }
+
+
+ /* Enhanced Navigation Styles */
+ nav {
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+     background: white;
+ }
+
+ nav.scrolled {
+     padding: 10px 0;
+     background: transparent !important;
+     box-shadow: none !important;
+ }
+
+ nav.scrolled .nav-container {
+     height: 60px !important;
+     max-width: 90% !important;
+     margin: 0 auto;
+     border-radius: 50px;
+     background: rgba(255, 255, 255, 0.95);
+     backdrop-filter: blur(10px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+     padding: 0 24px;
+ }
+
+ nav.scrolled .logo-section {
+     transform: scale(0.9);
+ }
+
+ nav.scrolled .logo-icon {
+     color: #2563eb !important;
+ }
+
+ nav.scrolled .logo-text {
+     color: #1e3a8a;
+ }
+
+ nav.scrolled .nav-links a {
+     color: #1f2937;
+     font-weight: 500;
+     padding: 8px 16px;
+     border-radius: 20px;
+     transition: all 0.3s ease;
+ }
+
+ nav.scrolled .nav-links a:hover {
+     background: #3b82f6;
+     color: white;
+     transform: translateY(-2px);
+ }
+
+ nav.scrolled #mobile-menu-btn {
+     color: #1e3a8a;
+     background: white;
+     border-radius: 8px;
+ }
+
+ .nav-container {
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .logo-section {
+     transition: transform 0.3s ease;
+ }
+
+ nav.scrolled #mobile-menu {
+     top: 80px;
+     border-radius: 20px;
+     overflow: hidden;
+     background: white;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+     margin: 0 20px;
+ }
+
+ #mobile-menu {
+     background: white;
+ }
+
+ body {
+     scroll-padding-top: 100px;
+ }

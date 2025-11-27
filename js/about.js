@@ -32,3 +32,19 @@
                 closeMenu();
             }
         });
+
+// Tambahan script untuk scroll effect
+        $(document).ready(function() {
+            const nav = $('nav');
+            
+            function handleScroll() {
+                if ($(window).scrollTop() > 50) {
+                    nav.addClass('scrolled');
+                } else {
+                    nav.removeClass('scrolled');
+                }
+            }
+            
+            $(window).on('scroll', handleScroll);
+            handleScroll();
+        });
